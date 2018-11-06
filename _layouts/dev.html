@@ -6,24 +6,24 @@
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 	<meta name="author" content="JJ Ying" />
-	<meta name="description" content="来自 Anyway.FM 的 UI 设计行业英文术语聚合站"/>
+	<meta name="description" content="Whatever"/>
 
 	<link rel="stylesheet" href="assets/styles.css">
 
-	<link rel="icon" href="https://s.anw.red/anyway.abc/favicon-16.png" sizes="16x16">
-	<link rel="icon" href="https://s.anw.red/anyway.abc/favicon-32.png" sizes="32x32">
-	<link rel="icon" href="https://s.anw.red/anyway.abc/favicon-96.png" sizes="96x96">
-	<link rel="mask-icon" href="https://s.anw.red/anyway.fm/mask-icon.svg" color="#ffe324">
+	<link rel="icon" href="assets/favicon-16.png" sizes="16x16">
+	<link rel="icon" href="assets/favicon-32.png" sizes="32x32">
+	<link rel="icon" href="assets/favicon-96.png" sizes="96x96">
+	<link rel="mask-icon" href="assets/mask-icon.svg" color="#00df9e">
 
 	<meta property="og:url" content="http://ABC.Anyway.FM">
 		<meta property="og:type" content="website">
-		<meta property="og:title" content="Anyway.ABC 安妮薇术语小词典">
-		<meta property="og:description" content="来自 Anyway.FM 的 UI 设计行业英文术语聚合站">
+		<meta property="og:title" content="Whatever.FM">
+		<meta property="og:description" content="Whatever">
 		<meta property="og:image" content="https://s.anw.red/anyway.abc/preview.png">
 
 		<meta name="twitter:card" content="summary" />
-		<meta name="twitter:description" content="来自 Anyway.FM 的 UI 设计行业英文术语聚合站" />
-		<meta name="twitter:title" content="Anyway.ABC 安妮薇术语小词典" />
+		<meta name="twitter:description" content="Whatever" />
+		<meta name="twitter:title" content="Whatever.FM" />
 		<meta name="twitter:site" content="@anyway__fm" />
 		<meta name="twitter:image" content="https://s.anw.red/anyway.abc/preview.png" />
 
@@ -33,16 +33,13 @@
 
 	<header>
 		<div class="inner">
-			<h1>Test.FM<sup>ALPHA</sup></h1>
+			<h1>Whatever.FM<sup>ALPHA</sup></h1>
 
 		</div>
 	</header>
 
-	<main id="abc">
+	<main id="whatever">
 		{{ content }}
-		<audio :src="voiceFileUrl" id="voice-file" loop preload="none"></audio>
-
-
 	</main>
 
 
@@ -58,52 +55,32 @@
 	<div class="mask mt"></div><div class="mask mb"></div><div class="mask mv ml"></div><div class="mask mv mr"></div><div class="mask mv ml2"></div><div class="mask mv mr2"></div>
 
 	<div class="x-corner x-corner-l">
-		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50"><path d="M0 49.9L50 49.9C32.6 49.9 26.3 48.1 20 44.7 13.6 41.3 8.6 36.3 5.2 29.9 1.8 23.6 0 17.3 0-0.1L0 49.9Z" fill="#ffe324"/></svg>
+		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50"><path d="M0 49.9L50 49.9C32.6 49.9 26.3 48.1 20 44.7 13.6 41.3 8.6 36.3 5.2 29.9 1.8 23.6 0 17.3 0-0.1L0 49.9Z" fill="#00df9e"/></svg>
 	</div>
 
 	<div class="x-corner x-corner-r">
-		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50"><path d="M0 49.9L50 49.9C32.6 49.9 26.3 48.1 20 44.7 13.6 41.3 8.6 36.3 5.2 29.9 1.8 23.6 0 17.3 0-0.1L0 49.9Z" fill="#ffe324"/></svg>
+		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50"><path d="M0 49.9L50 49.9C32.6 49.9 26.3 48.1 20 44.7 13.6 41.3 8.6 36.3 5.2 29.9 1.8 23.6 0 17.3 0-0.1L0 49.9Z" fill="#00df9e"/></svg>
 	</div>
 
 	<script src="assets/vue.js"></script>
 
 	<script>
 		var a = new Vue({
-			el: '#abc',
+			el: '#whatever',
 			data: {
 				nowPlaying: false,
 				voiceFileUrl: 'http://dict.youdao.com/dictvoice?audio=anyway&type=2',
 				currentWord: "anyway"
 			},
 			methods: {
-				playNow: function (word,isCustomized) {
-					if ( word == a.currentWord) {
-						audio.pause()
-						a.nowPlaying = !a.nowPlaying;
-							if (a.nowPlaying == true) {
-								var newAudio = setTimeout("audio.play()",50)
-							}
-					}
-					else {
-						a.nowPlaying = true
-						a.currentWord = word
-
-						if ( isCustomized == '1' ){
-							a.voiceFileUrl = 'https://s.anw.red/anyway.abc/audio/' + a.currentWord + '.mp3'
-						}
-						else {
-							a.voiceFileUrl = 'http://dict.youdao.com/dictvoice?audio=' + a.currentWord + '&type=2'
-						}
-
-						var newAudio = setTimeout("audio.play()",50)
-					}
+				playNow: function (word) {
 
 				}
 			}
 		})
 
 		window.onload = function(){
-			audio = document.getElementById("voice-file")
+
 		}
 
 		<!-- ~Baidu Analytics -->
