@@ -29,12 +29,12 @@
 				<title>{{post.ep}}: {{ post.title | xml_escape }}</title>
 				{% if post.excerpt %}
 				<description><![CDATA[
-					{{ post.excerpt | xml_escape }}
+					{{ post.excerpt  }}
 					]]>
 				</description>
 				{% else %}
 				<description><![CDATA[
-					{{ post.content | xml_escape }}
+					{{ post.content }}
 					]]>
 				</description>
 				{% endif %}
