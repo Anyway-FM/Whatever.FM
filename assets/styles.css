@@ -1,3 +1,4 @@
+@charset "utf-8";
 *{
 	margin: 0;
 	padding: 0;
@@ -7,8 +8,6 @@
 	box-sizing: border-box;
 	-webkit-tap-highlight-color: transparent;
 }
-html{
-}
 body{
 	font-family: 'Anyway Type', 'Myriad Pro', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
 	color: #555;
@@ -17,6 +16,7 @@ body{
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	transition: background-color .2s ease-in-out;
 }
 a{
 	text-decoration: none;
@@ -48,15 +48,6 @@ ol, ul{
 	font-style: normal;
 	font-display: fallback;
 }
-@font-face {
-  font-family: 'Anyway Serif';
-	src: url('https://s.anw.red/font/calluna-bold.woff') format('woff'),
-		url('https://s.anw.red/font/calluna-bold.woff2') format('woff2'),
-		url('https://s.anw.red/font/calluna-bold.eot') format('eot');
-  font-weight: 700;
-  font-style: normal;
-  font-display: fallback;
-}
 .mask{
 	position: fixed;
 	top: 0;
@@ -68,44 +59,23 @@ ol, ul{
 	height: 100vh;
 	padding: 2rem;
 }
-.mask > .inner{
+#mask-border{
 	border: .8rem solid #0700d9;
 	height: 100%;
 	width: 100%;
-}
-
-/* ~The End */
-.the-end{
-	font-size: 2rem;
-	margin: 0 0 3rem;
-	font-weight: 700;
-}
-.the-end p{
-	width: 1.6rem;
-	margin: 0 auto .75rem;
-	height: 1.6rem;
-	background: #00df9e;
-	animation: square-rotate 10s ease-in-out infinite;
-}
-@keyframes square-rotate {
-	0%{transform: none;}
-	90%{transform: none;}
-	94%{transform: rotate(1.1turn);}
-	96%{transform: rotate(.95turn);}
-	98%{transform: rotate(1.03turn);}
-	100%{transform: rotate(1turn);}
 }
 /*~Footer*/
 footer{
 	font-size: .75rem;
 	clear: both;
 	text-align: center;
-	position: absolute;
+	position: fixed;
 	bottom: 0;
 	left: 0;
 	width: 100%;
 	/* height: 30vh; */
 	z-index: 99999;
+	animation: slowShow .2s cubic-bezier(1,0,.5,.5);
 }
 footer > .inner{
 
@@ -114,14 +84,20 @@ footer svg{
 	max-width: 30%;
 	max-height: 100%;
 }
-
+footer svg path{fill:#fff;}
+#logo-stroke{
+	fill:#0700d9;
+	transition: fill .2s ease-in-out;
+}
+#logo-fill{
+	fill:#fff;
+	transition: fill .2s ease-in-out;
+}
 /*~Main*/
 main{
 	display: block;
-	padding:  0 .8rem 4em;
 	line-height: 1.65;
 	font-size: 1rem;
-	max-width: 80rem;
 	margin: 0 auto;
 }
 @keyframes slowShow {
@@ -139,7 +115,10 @@ header > .inner{
 }
 .logo{
 	max-width: 100vw;
+	animation: slowShow .4s cubic-bezier(1,0,.5,.5);
 	max-height: 60vh;
+	background: #16de9f;
+	color: #0700d9;
 }
 .logo img{
 	margin: 0 auto;
@@ -155,38 +134,37 @@ header > .inner{
 	max-width: 40em;
 }
 /* ~Post */
-.posts > .inner{
-	display: flex;
-	flex-wrap: wrap;
-	flex-direction: column;
-	align-items: center;
-}
 .post{
-	flex-basis: 50%;
-	max-width: 66vw;
-	/* padding: 2rem; */
-	margin: 0 0 6rem;
-}
-.post-content img{
-	max-width: 100%;
-	vertical-align: middle;
-}
-.post-content > .inner{
+	height: 120vh;
 	position: relative;
+}
+.post-cover{
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center bottom;
+	position: absolute;
+	z-index: 99999;
+	width: 100%;
+	height: 100%;
+	bottom: 0;
+	left: 0;
 }
 .post-meta{
 	position: absolute;
-	width: 100%;
-	left: 0;
-	top: 0;
-	opacity: 0;
-	padding: 2rem;
-	transition: all .12s ease-out;
-	background: #fff;
 }
-.post:hover .post-meta{
-	opacity: 1;
-}
-.post-title{
+.top-left{left: 5rem;top: 5rem;text-align: left;}
+.top-right{right: 5rem;top: 5rem;text-align: right;}
+h1{
+	font-size: 2rem;
 	font-weight: 700;
+}
+.post-ep{
+	font-size: 3.5rem;
+	font-weight: 700;
+	line-height: 1;
+}
+.post-ep::before{
+	content: "#";
+	font-size: .5em;
+	vertical-align: middle;
 }
