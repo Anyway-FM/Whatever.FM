@@ -151,9 +151,10 @@ header > .inner{
 }
 .post-meta{
 	position: absolute;
+	z-index: 999999;
 }
-.top-left{left: 5rem;top: 5rem;text-align: left;}
-.top-right{right: 5rem;top: 5rem;text-align: right;}
+.top-left{left: 6rem;top: 15vh;text-align: left;}
+.top-right{right: 6rem;top: 15vh;text-align: right;}
 h1{
 	font-size: 2rem;
 	font-weight: 700;
