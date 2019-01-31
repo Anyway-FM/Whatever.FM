@@ -42,8 +42,8 @@
 				<link>{{ site.url }}{{ post.url }}</link>
 				<guid isPermaLink="true">{{ site.url }}{{ post.url }}</guid>
 				<author>{{ post.hosts | xml_escape }}</author>
-				<itunes:image href="https://raw.githubusercontent.com/Anyway-Design/Whatever.FM/master/output/{{post.ep}}.jpg"/>
-				<enclosure type="audio/mpeg" url="https://raw.githubusercontent.com/Anyway-Design/Whatever.FM/master/output/{{post.ep}}.mp3"/>
+				<itunes:image href="https://s.anw.red/whatever.fm/cover/{{post.ep}}.jpg"/>
+				<enclosure type="audio/mpeg" url="http://w.anw.red/{{post.ep}}.mp3"/>
 				<itunes:duration>{{post.duration}}</itunes:duration>
 				<itunes:explicit>{{post.explicit | default: "no"}}</itunes:explicit>
 			</item>
