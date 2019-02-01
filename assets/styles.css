@@ -206,3 +206,52 @@ h1{
 	font-size: .5em;
 	vertical-align: middle;
 }
+.post-play{
+	display: inline-block;
+}
+.post-play:hover{
+	transform: translateX(.2em);
+}
+/* ~Small Screens */
+@media screen and (max-width: 1200px) {
+	.mask{
+		padding: 1.5rem;
+	}
+	#mask-border{
+		border-width: .6rem;
+	}
+	footer svg{
+		max-width: 40%;
+	}
+}
+
+@media screen and (max-width: 1000px) {
+	.mask{
+		padding: 1.3rem;
+	}
+	#mask-border{
+		border-width: .5rem;
+	}
+	footer svg{
+		max-width: 50%;
+	}
+}
+@media screen and (max-width: 900px) {
+	footer svg{
+		max-width: 70%;
+	}
+	.post{
+		height: 105vh;
+		position: relative;
+	}
+	.post-meta{
+		position: absolute;
+		width: 100%;
+	}
+	.top-left, .top-right{left: 0;right: unset;top: 15vh;text-align: center;}
+	.post-cover{
+		z-index: 99999;
+		width: 120%;
+		left: -10%;
+	}
+}
