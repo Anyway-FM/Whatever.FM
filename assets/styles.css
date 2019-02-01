@@ -134,11 +134,41 @@ header > .inner{
 	font-size: 1.25rem;
 	line-height: 1.7;
 	max-width: 50em;
+	transform: translateY(.01em);
 	padding: 0 4rem;
 }
 .tagline a{
 	/* border-bottom: .1rem solid #fff; */
-	text-decoration: underline;
+	/* text-decoration: underline; */
+	font-weight: 700;
+	/* filter: invert(1); */
+	display: inline-block;
+}
+
+.tagline a span{
+	animation: shaking .3s ease-in infinite;
+	display: inline-block;
+	transform-origin: center center;
+}
+.tagline a:nth-child(2) span{
+	animation-delay: .1s;
+}
+.tagline a:hover{
+	transform: scale(1.1);
+	margin: 0 .3em;
+}
+@keyframes shaking {
+	0%{transform: translateX(0)translateY(0)}
+	25%{transform: translateX(.02em)translateY(.06em)}
+	34%{transform: translateX(.01em)translateY(-.02em)}
+	54%{transform: translateX(.03em)translateY(.03em)}
+	75%{transform: translateX(-.05em)translateY(.05em)}
+	90%{transform: translateX(.04em)translateY(-.04em)}
+	100%{transform: translateX(0)translateY(0)}
+}
+@keyframes hue-rotate {
+	0%{filter: hue-rotate(0turn);}
+	100%{filter: hue-rotate(1turn);}
 }
 /* ~Post */
 .post{
