@@ -21,6 +21,7 @@ body{
 a{
 	text-decoration: none;
 	transition: all .1s ease-in-out;
+	color: inherit;
 }
 ::selection{
 	background: #00df9e;
@@ -128,10 +129,16 @@ header > .inner{
 .tagline{
 	margin: 50vh auto 0;
 	color: #0700d9;
-	letter-spacing: .2em;
+	letter-spacing: .1em;
 	font-weight: 700;
 	font-size: 1.25rem;
-	max-width: 40em;
+	line-height: 1.7;
+	max-width: 50em;
+	padding: 0 4rem;
+}
+.tagline a{
+	/* border-bottom: .1rem solid #fff; */
+	text-decoration: underline;
 }
 /* ~Post */
 .post{
