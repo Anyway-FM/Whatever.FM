@@ -10,7 +10,7 @@
 }
 body{
 	font-family: 'Anyway Type', 'Myriad Pro', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
-	color: #555;
+	color: #0700d9;
 	text-align: center;
 	background: #16de9f;
 	text-rendering: optimizeLegibility;
@@ -174,6 +174,7 @@ header > .inner{
 .post{
 	height: 120vh;
 	position: relative;
+	overflow: hidden;
 }
 .post-cover{
 	background-size: contain;
@@ -211,6 +212,15 @@ h1{
 }
 .post-play:hover{
 	transform: translateX(.2em);
+}
+.the-end{
+	padding: 50vh 0;
+	background: #16de9f;
+	font-size: 1.5rem;
+	font-weight: 700;
+}
+.the-end > .inner{
+	padding: 0 4rem;
 }
 /* ~Small Screens */
 @media screen and (max-width: 1200px) {
@@ -253,5 +263,10 @@ h1{
 		z-index: 99999;
 		width: 120%;
 		left: -10%;
+	}
+}
+@media screen and (max-width: 400px) {
+	.logo{
+		margin-top: 24vh;
 	}
 }
