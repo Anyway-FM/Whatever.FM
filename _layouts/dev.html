@@ -5,7 +5,7 @@
 	<title>{{ page.title }}</title>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-	<meta name="author" content="JJ Ying" />
+	<meta name="author" content="JJ Ying & Leon Gao" />
 	<meta name="description" content="Whatever.FM 是一档无拘束、无特定主题、无固定更新周期的三无播客"/>
 
 	<link rel="stylesheet" href="assets/styles.css">
@@ -19,7 +19,7 @@
 	<meta property="og:type" content="website">
 	<meta property="og:title" content="Whatever.FM 随便侬">
 	<meta property="og:description" content="Whatever.FM 是一档无拘束、无特定主题、无固定更新周期的三无播客">
-	<meta property="og:image" content="https://s.anw.red/anyway.abc/preview.png">
+	<meta property="og:image" content="https://s.anw.red/whatever.fm/preview.png">
 
 	<meta name="twitter:card" content="summary" />
 	<meta name="twitter:description" content="Whatever.FM 是一档无拘束、无特定主题、无固定更新周期的三无播客" />
@@ -35,11 +35,14 @@
 
 	<header>
 		<div class="inner">
-			<div class="logo in-view">
+			<div class="logo in-view" data-bg="#16de9f">
 				<img src="assets/logo.png">
 			</div>
+			{% assign first = site.posts.first %}
 			<div class="tagline" id="tagline">
-				Whatever.FM 是一档无拘束、无特定主题、无固定更新周期的三无播客，<br>欢迎用<a href="https://music.163.com/#/radio/?id=792392433"><span>网易云音乐</span></a>、<a href="https://itunes.apple.com/us/podcast/whatever-fm-%E9%9A%8F%E4%BE%BF%E4%BE%AC/id1447531130?mt=2"><span>Apple 播客</span></a>和其他泛用型博客客户端订阅收听~
+				<div class="inner">
+					Whatever.FM 是一档无拘束、无特定主题、无固定更新周期的三无播客，<br>欢迎用<a href="https://music.163.com/#/radio/?id=792392433"><span>网易云音乐</span></a>、<a href="https://itunes.apple.com/us/podcast/whatever-fm-%E9%9A%8F%E4%BE%BF%E4%BE%AC/id1447531130?mt=2"><span>Apple 播客</span></a>和其他泛用型博客客户端订阅收听~
+				</div>
 			</div>
 
 
@@ -49,7 +52,7 @@
 	<main id="whatever">
 		<div class="posts">
 		{% for post in site.posts %}
-			<article class="post in-view" style="background-color:#{{ post.bg }};color:#{{ post.border }};border-color:#{{ post.fill }};">
+			<article class="post in-view post-{{ forloop.index}}" data-bg="#{{ post.bg }}" style="background-color:#{{ post.bg }};color:#{{ post.border }};border-color:#{{ post.fill }};">
 				<div class="post-cover" style="background-image:url(assets/bg{{ post.ep }}.png)"></div>
 				<div class="post-meta {{ post.title-position }}">
 					<div class="post-ep">{{ post.ep }}</div>
@@ -77,7 +80,7 @@
 
 	<div class="mask"><div id="mask-border"></div></div>
 
-	<script src="assets/vue.js"></script>
+	<script src="https://s.anw.red/js/vue.min.js"></script>
 
 	<script>
 		var w = new Vue({
@@ -97,13 +100,25 @@
 		.on('enter', el => {
 			el.classList.add('in')
 			borderColor = el.style.color
-			bgColor = el.style.backgroundColor
-			// document.querySelector('.in-view').style.backgroundColor = bgColor
+			bgColor = el.dataset.bg
+			console.log("I'm in!")
+			console.log(bgColor)
 			document.getElementById("logo-stroke").style.fill = borderColor
 			document.getElementById("logo-fill").style.fill = el.style.borderColor
-			document.getElementsByTagName("body")[0].style.backgroundColor = bgColor
+			// document.body.style.backgroundColor = bgColor
 			document.getElementById("mask-border").style.borderColor = borderColor
 			document.getElementById("tagline").style.color = borderColor
+		})
+
+		// 下滚到第一页时候更改背景色
+		inView('.post-1')
+		.on('enter', el => {
+			document.body.style.backgroundColor = el.dataset.bg
+		})
+
+		inView('.logo')
+		.on('enter', el => {
+			document.body.style.backgroundColor = "#16de9f"
 		})
 
 		inView.offset({
@@ -114,7 +129,7 @@
 		});
 
 		window.onload = function(){
-
+			document.getElementsByClassName("post")[0].style.backgroundColor = "transparent"
 		}
 
 		<!-- ~Baidu Analytics -->

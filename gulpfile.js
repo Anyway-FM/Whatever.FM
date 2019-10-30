@@ -4,7 +4,7 @@ var gulp = require('gulp'),
 
 var cdnUrl = [
 	[ 'assets/vue.js', 'https://s.anw.red/js/vue.min.js' ],
-	[ 'assets/', 'https://s.anw.red/anyway.abc/' ]
+	[ 'assets/', 'https://s.anw.red/whatever.fm/' ]
 ];
 
 gulp.task('default', function() {
