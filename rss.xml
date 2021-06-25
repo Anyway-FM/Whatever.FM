@@ -27,17 +27,10 @@
 		{% for post in site.posts limit:feed_items %}
 			<item>
 				<title>{{post.ep}}: {{ post.title | xml_escape }}</title>
-				{% if post.excerpt %}
-				<description><![CDATA[
-					{{ post.excerpt  }}
-					]]>
-				</description>
-				{% else %}
 				<description><![CDATA[
 					{{ post.content }}
 					]]>
 				</description>
-				{% endif %}
 				<pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
 				<link>{{ site.url }}{{ post.url }}</link>
 				<guid isPermaLink="true">{{ site.url }}{{ post.url }}</guid>
