@@ -10,6 +10,7 @@
 		<link>http://Whatever.FM</link>
 		<atom:link href="http://Whatever.FM/{{ page.path }}" rel="self" type="application/rss+xml" />
 		<language>zh-CN</language>
+		<copyright>© 2021 Anyway.FM</copyright>
 		<itunes:category text="Society &amp; Culture">
 			<itunes:category text="Personal Journals" />
 		</itunes:category>
@@ -27,6 +28,8 @@
 		{% for post in site.posts limit:feed_items %}
 			<item>
 				<title>{{post.ep}}: {{ post.title | xml_escape }}</title>
+				<itunes:title>{{ post.title | xml_escape }}</itunes:title>
+				<itunes:episode>{{post.ep}}</itunes:episode>
 				<description><![CDATA[
 					{{ post.content }}
 					]]>
