@@ -44,7 +44,7 @@
 				<author>{{ post.hosts | xml_escape }}</author>
 				<itunes:image href="https://s.anw.red/whatever.fm/cover/{{post.ep}}.jpg"/>
 				<enclosure type="audio/mpeg" url="https://w.anw.red/{{post.ep}}.mp3"/>
-				<itunes:duration>{{post.duration}}</itunes:duration>
+				<itunes:duration>{{post.duration | to_integer}}</itunes:duration>
 				<itunes:explicit>{{post.explicit | default: "no"}}</itunes:explicit>
 			</item>
 		{% endfor %}
