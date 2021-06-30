@@ -1,0 +1,17 @@
+name: copy files
+on:
+  push:
+    branches: [ master ]
+jobs:
+
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: copy file
+      uses: canastro/copy-file-action@master
+      with:
+        source: "_layout/dev.html"
+        target: "_layout/dev2.html"
+        
