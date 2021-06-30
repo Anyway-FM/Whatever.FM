@@ -12,6 +12,6 @@ jobs:
     - name: copy file
       uses: canastro/copy-file-action@master
       with:
-        source: "_layout/dev.html"
-        target: "_layout/dev2.html"
+        source: "_layouts/dev.html"
+        target: "_layouts/dev2.html"
         
