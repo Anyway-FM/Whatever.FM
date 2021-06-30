@@ -3,3 +3,4 @@ _site/
 builds/
 source/
 .DS_Store
+.jekyll-cache/

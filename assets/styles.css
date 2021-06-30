@@ -9,7 +9,7 @@
 	-webkit-tap-highlight-color: transparent;
 }
 body{
-	font-family: 'Anyway Type', 'Myriad Pro', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+	font-family:'Anyway Extra', 'Anyway Type', 'Myriad Pro', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
 	color: #0700d9;
 	text-align: center;
 	background: #16de9f;
@@ -34,23 +34,7 @@ a{
 ol, ul{
 	list-style-position: inside;
 }
-/*~Fonts*/
-@font-face {
-	font-family: 'Anyway Type';
-	src: url('https://s.anw.red/font/calluna-sans-regular.woff2') format('woff2'),
-		url('https://s.anw.red/font/calluna-sans-regular.woff') format('woff');
-	font-weight: 400;
-	font-style: normal;
-	font-display: fallback;
-}
-@font-face {
-	font-family: 'Anyway Type';
-	src: url('https://s.anw.red/font/calluna-sans-bold.woff2') format('woff2'),
-		url('https://s.anw.red/font/calluna-sans-bold.woff') format('woff');
-	font-weight: 700;
-	font-style: normal;
-	font-display: fallback;
-}
+
 .mask{
 	position: fixed;
 	top: 0;
@@ -276,4 +260,36 @@ h1{
 	.logo{
 		margin-top: 24vh;
 	}
+}
+/*~Fonts*/
+@font-face {
+	font-family: 'Anyway Type';
+	src: url('https://s.anw.red/font/calluna-sans-regular.woff2') format('woff2'),
+		url('https://s.anw.red/font/calluna-sans-regular.woff') format('woff');
+	font-weight: 400;
+	font-style: normal;
+	font-display: fallback;
+}
+@font-face {
+	font-family: 'Anyway Type';
+	src: url('https://s.anw.red/font/calluna-sans-bold.woff2') format('woff2'),
+		url('https://s.anw.red/font/calluna-sans-bold.woff') format('woff');
+	font-weight: 700;
+	font-style: normal;
+	font-display: fallback;
+}
+
+@font-face{
+	font-family: 'Anyway Extra';
+	src: url('https://s.anw.red/font/anyway-extra-regular.woff2') format('woff2');
+	font-weight: 400;
+	font-style: normal;
+	font-display: fallback;
+}
+@font-face{
+	font-family: 'Anyway Extra';
+	src: url('https://s.anw.red/font/anyway-extra-bold.woff2') format('woff2');
+	font-weight: 700;
+	font-style: normal;
+	font-display: fallback;
 }
