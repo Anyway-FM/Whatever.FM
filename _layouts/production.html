@@ -112,7 +112,7 @@
 		})
 
 		// 下滚到第一页时候更改背景色
-		inView('.post-1')
+		inView('.post')
 		.on('enter', el => {
 			document.body.style.backgroundColor = el.dataset.bg
 		})
@@ -123,9 +123,9 @@
 		})
 
 		inView.offset({
-			top: 40,
+			top: 310,
 			right: 0,
-			bottom: 50,
+			bottom: 610,
 			left: 0
 		});
 
