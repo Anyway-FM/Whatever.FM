@@ -1,1 +1,1 @@
-欢迎前往小宇宙、网易云音乐以及 Apple 播客订阅本播客~
+欢迎前往[小宇宙](https://www.xiaoyuzhoufm.com/podcast/5e284e0d418a84a04626959d)、[网易云音乐](https://music.163.com/#/radio/?id=792392433)以及 [Apple 播客](https://itunes.apple.com/us/podcast/whatever-fm-%E9%9A%8F%E4%BE%BF%E4%BE%AC/id1447531130?mt=2)订阅本播客~
