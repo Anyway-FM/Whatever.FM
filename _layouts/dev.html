@@ -57,7 +57,11 @@
 				<div class="post-meta {{ post.title-position }}">
 					<div class="post-ep">{{ post.ep }}</div>
 					<h1>{{ post.title }}</h1>
-					<a class="post-play" href="https://music.163.com/#/dj?id={{ post.netease-id }}" target="_blank" style="color:#{{post.border}}">立即收听 →</a>
+					{% if post.cosmos-id != "" %}
+					<a class="post-play" href="https://www.xiaoyuzhoufm.com/episode/{{ post.cosmos-id }}" target="_blank" style="color:#{{post.border}}">立即收听 →</a>
+					{% else %}
+					<a class="post-play" href="https://w.anw.red/{{ post.ep }}.mp3" target="_blank" style="color:#{{post.border}}">立即收听 →</a>
+					{% endif %}
 				</div>
 			</article>
 		{% endfor %}
@@ -118,6 +122,11 @@
 		})
 
 		inView('.logo')
+		.on('enter', el => {
+			document.body.style.backgroundColor = "#16de9f"
+		})
+
+		inView('.the-end')
 		.on('enter', el => {
 			document.body.style.backgroundColor = "#16de9f"
 		})

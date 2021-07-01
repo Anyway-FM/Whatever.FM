@@ -42,7 +42,7 @@
 			{% assign first = site.posts.first %}
 			<div class="tagline" id="tagline">
 				<div class="inner">
-					Whatever.FM 是一档无拘束、无特定主题、无固定更新周期的三无播客，<br>欢迎用<a href="https://music.163.com/#/radio/?id=792392433"><span>网易云音乐</span></a>、<a href="https://itunes.apple.com/us/podcast/whatever-fm-%E9%9A%8F%E4%BE%BF%E4%BE%AC/id1447531130?mt=2"><span>Apple 播客</span></a>和其他泛用型博客客户端订阅收听~
+					Whatever.FM 是一档无拘束、无特定主题、无固定更新周期的三无播客，<br>欢迎用<a href="https://www.xiaoyuzhoufm.com/podcast/5e284e0d418a84a04626959d"><span>小宇宙</span></a>、<a href="https://music.163.com/#/radio/?id=792392433"><span>网易云音乐</span></a>、<a href="https://itunes.apple.com/us/podcast/whatever-fm-%E9%9A%8F%E4%BE%BF%E4%BE%AC/id1447531130?mt=2"><span>Apple 播客</span></a>和其他泛用型博客客户端订阅收听~
 				</div>
 			</div>
 
@@ -58,7 +58,11 @@
 				<div class="post-meta {{ post.title-position }}">
 					<div class="post-ep">{{ post.ep }}</div>
 					<h1>{{ post.title }}</h1>
-					<a class="post-play" href="https://music.163.com/#/dj?id={{ post.netease-id }}" target="_blank" style="color:#{{post.border}}">立即收听 →</a>
+					{% if post.cosmos-id != "" %}
+					<a class="post-play" href="https://www.xiaoyuzhoufm.com/episode/{{ post.cosmos-id }}" target="_blank" style="color:#{{post.border}}">立即收听 →</a>
+					{% else %}
+					<a class="post-play" href="https://w.anw.red/{{ post.ep }}.mp3" target="_blank" style="color:#{{post.border}}">立即收听 →</a>
+					{% endif %}
 				</div>
 			</article>
 		{% endfor %}
@@ -118,6 +122,11 @@
 		})
 
 		inView('.logo')
+		.on('enter', el => {
+			document.body.style.backgroundColor = "#16de9f"
+		})
+
+		inView('.the-end')
 		.on('enter', el => {
 			document.body.style.backgroundColor = "#16de9f"
 		})
