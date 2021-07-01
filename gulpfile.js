@@ -7,7 +7,7 @@ var cdnUrl = [
 	[ 'assets/', 'https://s.anw.red/whatever.fm/' ]
 ];
 
-gulp.task('default', function() {
+gulp.task('default', function(done) {
 
 	gulp.src('_layouts/dev.html')
 		.pipe(plugins.cacheBust({
